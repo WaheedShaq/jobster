@@ -1,10 +1,19 @@
-import './App.css';
-import { Provider } from 'react-redux';
+import Landing from './pages/Landing';
+import styled from 'styled-components';
+
+const Button = styled.button`
+  background: red;
+  color: white;
+  font-size: 2rem;
+`;
 
 function App() {
-  <Provider>
-    return <div>Hello</div>;
-  </Provider>;
+  return (
+    <div>
+      <Button>Click Me</Button>
+      <Landing />
+    </div>
+  );
 }
 
 export default App;
