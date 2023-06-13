@@ -1,13 +1,14 @@
 import React from 'react';
-import logo from '../assets/images/logo.svg';
+import { Logo } from '../components';
 import main from '../assets/images/main.svg';
 import Wrapper from '../assets/wrappers/LandingPage';
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
   return (
     <Wrapper>
       <nav>
-        <img src={logo} alt='jobster-logo' className='logo' />
+        <Logo />
       </nav>
       <div className='container page'>
         <div className='info'>
@@ -15,12 +16,12 @@ const Landing = () => {
             Job <span>tracking</span>app
           </h1>
           <p>
-            I'm baby banjo keffiyeh lo-fi, snackwave fam vexillologist quinoa
-            pinterest. 90's gatekeep leggings migas kogi. Kombucha 8-bit
-            scenester, typewriter tote bag shoreditch slow-carb twee
-            single-origin coffee trust fund.
+            A job tracking app to find the suitable job for you{' '}
+            <b>effortlessly.</b>
           </p>
-          <button className='btn btn-hero'>Login/Register</button>
+          <Link to='/register' className='btn btn-hero'>
+            Login/Register
+          </Link>
         </div>
         <img src={main} alt='job hunt' className='img main-img'></img>
       </div>
