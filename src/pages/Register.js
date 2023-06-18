@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { registerUser } from '../features/user/userSlice';
 import { loginUser } from '../features/user/userSlice';
@@ -16,6 +18,8 @@ const initialState = {
 
 const Register = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [values, setValues] = useState(initialState);
   const { user, isLoading } = useSelector((store) => store.user);
 
@@ -42,6 +46,14 @@ const Register = () => {
   const toggleMember = () => {
     setValues({ ...values, isMember: !values.isMember });
   };
+
+  useEffect(() => {
+    if (user) {
+      setTimeout(() => {
+        navigate('/');
+      }, 2000);
+    }
+  }, [user, navigate]);
 
   return (
     <Wrapper className='full-page'>
